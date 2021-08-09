@@ -7,6 +7,6 @@ Given('that I am on the Home Page') do
   end
   
   Then('I should see a list of results') do
-    pending # Write code here that turns the phrase above into concrete actions
+    expect(@search_page.results_list).not_to be_nil
   end
   

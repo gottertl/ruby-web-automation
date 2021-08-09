@@ -26,8 +26,6 @@ else
     puts "Incorrect Browser"
 end
 
-puts @driver
-
 Capybara.configure do |config|
     config.default_driver = @driver
     config.app_host = CONFIG["url"]
