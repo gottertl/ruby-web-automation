@@ -18,7 +18,6 @@ jobs:
       uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
       with:
         ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
     - name: Prep env
       run: |
@@ -29,6 +28,7 @@ jobs:
     - name: Prep project
       run: |
         gem install cucumber
+        bundle install
 
     - name: Test
       run: |
