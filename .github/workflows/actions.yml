@@ -27,7 +27,6 @@ jobs:
 
     - name: Prep project
       run: |
-        gem install cucumber
         bundle install
 
     - name: Test
