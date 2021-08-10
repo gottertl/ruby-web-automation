@@ -12,4 +12,9 @@ class HomePage
         find("#twotabsearchtextbox").native.send_keys(:return)
         #click_button("#nav-search-submit-button")
     end
+
+    def go_to_login
+        find("a[data-nav-role='signin']").click
+    end
+
 end

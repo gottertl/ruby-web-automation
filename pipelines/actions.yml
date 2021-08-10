@@ -18,13 +18,16 @@ jobs:
       uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
       with:
         ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
     - name: Prep env
       run: |
         curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
         sudo apt-get install -y xvfb ca-certificates net-tools netcat gnupg ffmpeg libgtk-3-0 libgdk-pixbuf2.0-dev libxcomposite-dev libdbus-glib-1-2 libatk-bridge2.0-0 wget libgbm1 libnss3 libxss1 libasound2
         sudo apt-get install -y nodejs
+
+    - name: Prep project
+      run: |
+        bundle install
 
     - name: Test
       run: |

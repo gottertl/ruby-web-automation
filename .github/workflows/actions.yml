@@ -31,7 +31,7 @@ jobs:
 
     - name: Test
       run: |
-        cucumber -t @search
+        cucumber
     
     - name: Publish Reports
       uses: actions/upload-artifact@v2
